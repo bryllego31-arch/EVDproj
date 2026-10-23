@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kape Cebu: order Cebu barako coffee and pastries online for pickup or delivery.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>☕</text></svg>">
+<title>Kape Cebu | Local Coffee & Pastries</title>
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+</head>
+<body>
+<header>
+  <h1>☕ Kape Cebu</h1>
+  <nav><a href="#about">About</a><a href="#menu">Menu</a><a href="#order">Order</a><a href="#feedback">Feedback</a></nav>
+</header>
+
+<section class="hero" id="about">
+  <h2>Freshly brewed, proudly Cebuano.</h2>
+  <p>Kape Cebu serves locally sourced coffee and pastries. Browse the menu, build your cart, and place a pickup or delivery order online. Open daily, 7 AM to 9 PM.</p>
+</section>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search menu...">
+    <div id="categories">
+      <button class="chip active" data-cat="All">All</button>
+      <button class="chip" data-cat="Coffee">Coffee</button>
+      <button class="chip" data-cat="Cold">Cold</button>
+      <button class="chip" data-cat="Pastry">Pastry</button>
+    </div>
+  </div>
+  <div id="menu-grid" class="grid"><p>Loading menu (PyScript is starting)...</p></div>
+</section>
+
+<section id="order" class="two-col">
+  <div>
+    <h2>Your Cart</h2>
+    <div id="cart-items"><p class="muted">Your cart is empty.</p></div>
+    <div class="promo">
+      <input id="promo" placeholder="Promo code (try BREW10)">
+      <button id="apply-promo">Apply</button>
+    </div>
+    <p id="promo-msg" class="muted"></p>
+    <label>Order type
+      <select id="delivery">
+        <option value="0">Pickup (free)</option>
+        <option value="50">Delivery (₱50)</option>
+      </select>
+    </label>
+    <div class="totals">
+      <p>Subtotal: <span id="subtotal">₱0.00</span></p>
+      <p>Discount: <span id="discount">₱0.00</span></p>
+      <p>Delivery: <span id="fee">₱0.00</span></p>
+      <h3>Total: <span id="total">₱0.00</span></h3>
+    </div>
+  </div>
+  <form id="order-form" novalidate>
+    <h2>Checkout</h2>
+    <label>Name <input id="name" type="text" placeholder="Juan Dela Cruz"></label>
+    <label>Mobile number <input id="phone" type="text" placeholder="09XXXXXXXXX"></label>
+    <button type="submit">Place Order</button>
+    <p id="form-msg" role="status"></p>
+  </form>
+</section>
+
+<section id="feedback">
+  <h2>Feedback</h2>
+  <textarea id="comment" maxlength="200" rows="3" placeholder="Tell us how we did..."></textarea>
+  <p class="muted"><span id="count">0</span>/200 characters</p>
+  <button id="send-feedback">Send Feedback</button>
+  <p id="feedback-msg"></p>
+</section>
+
+<footer>© 2026 Kape Cebu · Event-Driven Programming Final Project · Built with PyScript</footer>
+
+<noscript>This site needs JavaScript enabled to run PyScript.</noscript>
+<script type="py" src="./main.py"></script>
+</body>
+</html>
